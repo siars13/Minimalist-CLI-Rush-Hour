@@ -2,6 +2,18 @@
 
 A minimalist implementation of the Rush Hour puzzle game in TypeScript, running in the terminal.
 
+## Gameplay Preview
+
+```text
+--- RUSH HOUR ---
+.       a       .       .       .       .
+.       a       .       l       .       .
+red     red     .       l       .       .
+.       .       .       l       .       .
+.       .       .       .       .       .
+.       .       .       .       .       .
+```
+
 ## Prerequisites
 
 - Node.js (v20+)
