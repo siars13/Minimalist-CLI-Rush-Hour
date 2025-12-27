@@ -8,7 +8,6 @@ import {
   gameWin,
   type MoveDirection,
 } from "./domain.js";
-// ... (garde ta fonction populateGridWithCars ici ou importe-la) ...
 
 const main = async () => {
   const rl = readline.createInterface({ input, output });
@@ -22,19 +21,16 @@ const main = async () => {
     console.log("\n--- RUSH HOUR ---");
     grid.forEach((row) => console.log(row.join("\t")));
 
-    // 2. On demande au joueur quoi faire
     const answer = await rl.question(
       '\nEntrez une commande (ex: "red right") ou "exit": '
     );
 
     if (answer === "exit") {
-      break; // On sort de la boucle pour quitter
+      break;
     }
 
-    // 3. On analyse la réponse (Parsing)
     const [carId, direction] = answer.split(" "); // Coupe "red right" en ["red", "right"]
 
-    // 4. On trouve la voiture
     const selectedCar = car.find((c) => c.id === carId);
 
     if (!selectedCar) {
