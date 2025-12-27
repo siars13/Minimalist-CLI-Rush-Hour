@@ -1,0 +1,16 @@
+version: "3.9"
+
+services:
+  rushhour:
+    build: .
+    container_name: rushhour-game
+    volumes:
+      - .:/app
+      - /app/node_modules # Évite d'écraser les node_modules du conteneur par ceux du Mac
+
+    # INDISPENSABLE pour un jeu CLI interactif :
+    stdin_open: true # Garde l'entrée standard ouverte (équivalent à -i)
+    tty: true # Alloue un terminal (équivalent à -t)
+
+    # Commande pour lancer le jeu
+    command: npx tsx src/index.ts
